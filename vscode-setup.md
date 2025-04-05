@@ -17,4 +17,5 @@ ctrl + shift + n abre una nueva ventana de VS Code
 Ctrl + S: Guarda el archivo actual.
 Ctrl + G: Navega a una línea específica en el archivo.
 Alt + ↑ / ↓: Mueve línea.
-*Ctrl + *: Comenta línea.
+Ctrl + *: Comenta línea.
+Ctrl + +: Aumenta el tamaño de la letra.
