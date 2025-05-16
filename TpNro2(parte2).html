@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="inputpreciounitario">Precio del producto</label>
+    <input type="text" id="inputpreciounitario">
+    <label for="inputcantidadproducto">Cantidad de los productos</label>
+    <input type="text" id="inputcantidadproducto">
+    <button id="calculoboton">Calcular</button>;
+    <p id="textoimporte"></p>
+    <script>
+        const inputprecio=document.getElementById("inputpreciounitario");
+        const inputproducto=document.getElementById
+        ("inputcantidadproducto");
+        const boton=document.getElementById("calculoboton");
+        const parrafo=document.getElementById("textoimporte");
+        const multiplicar=(a,b)=>{
+            let c=a*b;
+            return c;
+        }
+        boton.addEventListener("click",function(){
+            let precio=parseInt(inputprecio.value);
+            let productos=parseInt(inputproducto.value);
+            let importe=multiplicar(precio,productos);
+            parrafo.textContent=`Su importe es de ${importe} pesos`
+        })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="txtboxclave">Introduzca su clave</label>
+    <input type="text" id="txtboxclave">
+    <button id="botoningreso">Ingresar</button>
+    <p id="textoclave"></p>
+    <script>
+        let clave=1234;
+        const inputclave=document.getElementById("txtboxclave");
+        const botonclave=document.getElementById("botoningreso");
+        const parrafoclave=document.getElementById("textoclave");
+        botonclave.addEventListener("click", function(){
+            let claveuser=parseInt(inputclave.value);
+            if(clave==claveuser){
+                parrafoclave.textContent="Su clave se ingreso correctamente";
+            }
+            else{
+                parrafoclave.textContent="Su clave no es correcta, intentar de nuevo";
+            }
+        })
+    </script>
+</body>
+</html>
