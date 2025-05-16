@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi primer programa JavaScript</title>
+</head>
+<body>
+    <h1>Mi primer script de JavaScript</h1>
+</body>
+<script>
+console.log("¡Hola Mundo desde la consola!")
+let nombre="Ivan";
+const edad=19;
+var ciudad="Villa Ballester";
+console.log("Hola "+ nombre+" tienes "+ edad+" años y vives en "+ ciudad)
+console.log(`Hola ${nombre}, tienes ${edad} años y vives en ${ciudad}`)
+class usuario{
+    constructor(nombre,Apellido,Sexo,Telefono,Soltero=Boolean){
+        this.nombre=nombre;
+        this.apellido=Apellido;
+        this.sexo=Sexo;
+        this.telefono=Telefono;
+        this.soltero=Soltero
+    }
+}
+    let personas=[];
+    let persona1=new usuario("Pepe", "Alvarez", "Masculino", "11 8901-3253",false);
+    let persona2=new usuario("Juana", "Rodriguez","Femenino","11 6203-8732", true);
+    let persona3=new usuario("Lola","Chavez","Femenino","11 5893-7320",false);
+    personas.push(persona1,persona2,persona3);
+    const personasformateadas=personas.map(p=>({
+        nombre:p.nombre,
+        apellido:p.apellido,
+        sexo:p.sexo,
+        telefono:p.telefono,
+        soltero:p.soltero ? "Si" : "No"
+    }))
+    console.table(personasformateadas);
+
+</script>
+</html>

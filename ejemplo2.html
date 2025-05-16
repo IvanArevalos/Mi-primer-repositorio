@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interaccion con JavaScript</title>
+</head>
+<body>
+    <h1>Interaccion con JavaScript</h1>
+    <button id="miBoton">Haz clic aqui</button>
+    <p id="resultado">Esperando clic...</p>
+    <button id="miBoton2">Agranda el texto y cambiale el fondo aca</button>
+    <button id="miBoton3">O aca para volver todo a como estaba</button>
+    <p id="contador">contador facherito</p>
+</body>
+<script>
+    const boton=document.getElementById("miBoton");
+    const boton2=document.getElementById("miBoton2");
+    const boton3=document.getElementById("miBoton3");
+    const parrafo=document.getElementById("resultado");
+    const contadorfacherito=document.getElementById("contador")
+    let contadorfacheritonumerico=0;
+    boton.addEventListener("click",function(){
+        parrafo.textContent="¡Has hecho clic en el boton!";
+        parrafo.style.color="blue";
+        parrafo.style.fontWeight="bold";
+        contadorfacheritonumerico=contadorfacheritonumerico+1;
+        contadorfacherito.textContent=contadorfacheritonumerico;
+    })
+    boton2.addEventListener("click",function(){
+        parrafo.style.fontSize="30px";
+        parrafo.style.backgroundColor="beige";
+        contadorfacheritonumerico=contadorfacheritonumerico+1;
+        contadorfacherito.textContent=contadorfacheritonumerico;
+    })
+    boton3.addEventListener("click", function(){
+        parrafo.style.fontSize="16px";
+        parrafo.style.color="black";
+        parrafo.style.fontWeight="normal";
+        parrafo.style.backgroundColor="white";
+        contadorfacheritonumerico=contadorfacheritonumerico+1;
+        contadorfacherito.textContent=contadorfacheritonumerico;
+    })
+</script>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Calculadora de Edad</h1>
+    <label for="nacimiento">Año de nacimiento</label>
+    <input type="text" id="nacimiento">
+    <label for="mesnacimiento">Mes de nacimiento</label>
+    <input type="text" id="mesnacimiento">
+    <label for="dianacimiento">Dia de nacimiento</label>
+    <input type="text" id="dianacimiento">
+    <button id="calcular">Calcular edad</button>
+    <label for="diastotales">cuantos dias faltan para tu cumple, (introduci el dia del anio en que naciste)</label>
+    <input type="text" id="diastotales">
+    <button id="botondiatotal">calcular dias totales</button>
+    <p id="diacumplep">aca van los dias que faltan para tu cumple</p>
+    <label for="dateraro">nose que esto</label>
+    <input type="date" name="qsy" id="nose">
+    <p id="resultadoedad"></p>
+    <ul id="aniosconsultados">Anios consultados</ul>
+</body>
+<script>
+    const calcularedad=(añonacimiento)=>{
+        let añoactual=2025;
+        let edad=añoactual-añonacimiento;
+        switch(edad){
+            case edad<0:
+                console.log("Error al calcular su edad, ¿¿todavia no nacio??, Error")
+                break
+            case edad>120:
+                console.log("Creo que usted es muy mayor para estar viendo esto, Error")
+                break
+            default:
+                return edad;
+                break;
+        }
+    }
+    const calcularmes=(mesnacimiento)=>{
+        let mesactual=5;
+        let mesedad=mesactual-mesnacimiento;
+        if(mesedad<0){
+            mesedad=-mesedad
+        }
+        return mesedad
+    }
+    const calculardias=(dianacimiento)=>{
+        let diaactual=14;
+        let diaedad=dianacimiento-14;
+        if(diaedad<0){
+            diaedad=-diaedad;
+        }
+        return diaedad;
+    }
+    const boton=document.getElementById("calcular");
+    const inputingresado=document.getElementById("nacimiento");
+    const inputmes=document.getElementById("mesnacimiento");
+    const inputdia=document.getElementById("dianacimiento");
+    const parrafo=document.getElementById("resultadoedad");
+    const fecharara=document.getElementById("nose");
+    const diastotales=document.getElementById("diastotales");
+    const botondiatotal=document.getElementById("botondiatotal");
+    const diacumpleaniostexto=document.getElementById("diacumplep")
+    boton.addEventListener("click", function(){
+        console.log("elboton anda")
+        let numeronacimiento=parseInt(inputingresado.value)
+        let mesnacimiento=parseInt(inputmes.value);
+        let dianacimiento=parseInt(inputdia.value);
+        let edadfinal=calcularedad(numeronacimiento);
+        let mesedad=calcularmes(mesnacimiento);
+        let diaedad=calculardias(dianacimiento);
+        let anios=[]
+        if(edadfinal<0){
+            parrafo.textContent="Usted no tendria que haber nacido todavia"
+            parrafo.style.color="tomato";
+            parrafo.style.fontWeight="bold";
+        }else if(edadfinal>120){
+            parrafo.textContent="No sera usted un vampiro?"
+            parrafo.style.color="tomato";
+            parrafo.style.fontWeight="bold";
+        } else{
+            if(mesnacimiento>5){
+                edadfinal=edadfinal-1
+            }
+            
+            parrafo.textContent=`Usted tiene ${edadfinal} años, con ${mesedad} meses y ${diaedad} dias!`;
+            parrafo.style.color="tomato";
+            parrafo.style.fontWeight="bold"; 
+            anios.push(edadfinal)
+            const historialanios=document.getElementById("aniosconsultados")
+            anios.forEach(anio => {
+                const li=document.createElement("li");
+                li.textContent=anio;
+                historialanios.appendChild(li);
+            });
+        }
+        })
+        botondiatotal.addEventListener("click", function(){
+            let diahoy=134;
+            let diaedad=parseInt(diastotales.value);
+            let diacumpleanios=diaedad-diahoy;
+            if(diacumpleanios<0){
+                diacumpleanios=-diacumpleanios;
+            }
+            diacumpleaniostexto.textContent=`Te faltan para tu cumple ${diacumpleanios} dias`;
+    })
+</script>
+</html>
