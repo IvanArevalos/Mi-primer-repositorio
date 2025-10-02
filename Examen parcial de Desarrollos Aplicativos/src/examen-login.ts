@@ -6,13 +6,20 @@ rol: "manager" },
 { id: 3, nombre: "Carlos López", email: "employee@company.com", password: "employee123",
 rol: "employee" },
 { id: 4, nombre: "Ana Martínez", email: "guest@company.com", password: "guest123", rol:
-"guest" }
+"" }
 ];
-function esemailValido(email) {
+function esemailValido(email:string): boolean {
     return email.includes("@") && email.includes(".");
 }
-function login(email, password){
-    if (!email) {
+function login(email:string, password:string): void {
+    const fechayhoraactual=new Date()
+    const horaactual=fechayhoraactual.getHours()
+    const minutos=fechayhoraactual.getMinutes()
+    const minutostotales=horaactual*60+minutos;
+    if(minutostotales<6*60 || minutostotales>=18*60){
+        console.log("No se encuentra en horario laboral para iniciar sesion")
+    }
+    else if (!email) {
         console.log("El formato del email es invalido");
     }
     else if (!password) {
@@ -45,6 +52,8 @@ function login(email, password){
                     case "guest":
                         console.log(`Bienvenido ${usuario.nombre}, Usted accedio como ${usuario.rol} y tiene acceso de solo lectura`);
                         break;
+                    default:
+                        console.log(`Bienvenido ${usuario.nombre}, Usted no tiene un rol definido`)
                     }
                     if (!usuario) {
                         console.log("Email o contraseña incorrectos.");
