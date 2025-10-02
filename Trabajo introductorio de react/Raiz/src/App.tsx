@@ -30,7 +30,7 @@ export default function MyApp(){
   return(
     <body> 
     <div>
-      <Main />
+      <Main/>
     </div>
     </body>
   )
