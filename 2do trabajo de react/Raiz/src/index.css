@@ -41,11 +41,9 @@ h1 {
   display: grid;
   color: antiquewhite;
 }
-.cardproductimgcontainer{
-
-}
 .cardproductimg{
   height: 400px;
+  width: 600px;
 }
 
 @media (prefers-color-scheme: light) {

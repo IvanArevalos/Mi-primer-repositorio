@@ -30,25 +30,39 @@ function Main(){
   return(
     <div>
     <div id="titulo">
-    <h1>Bienvenido a la ferreteria</h1>
-    </div>
-      <div className="products" id="Productcard1">
-        <div className='productstext'>
-        <h2>Nombre: {productcard1.name}</h2>
-        <h2>Precio: {productcard1.price}</h2>
-        <h2>En stock: {productcard1.inStock ? "Sí" : "No"}</h2>
-        </div>
-        <div className='cardproductimgcontainer'>
-        <img src={productcard1.image} alt="fotoproducto" className='cardproductimg'/>
-        </div>
+      <h1>Bienvenido a la ferreteria</h1>
       </div>
+        <div className="products" id="Productcard1">
+          <div className='productstext'>
+            <h2>Nombre: {productcard1.name}</h2>
+            <h2>Precio: {productcard1.price}</h2>
+            <h2>En stock: {productcard1.inStock ? "Sí" : "No"}</h2>
+          </div>
+          <div className='cardproductimgcontainer'>
+            <img src={productcard1.image} alt="fotoproducto" className='cardproductimg'/>
+          </div>
+        </div>
 
-      <div className="products" id="Productcard2">
-        <h2>Nombre: {productcard2.name}</h2>
-        <h2>Precio: {productcard2.price}</h2>
-        <h2>En stock: {productcard2.inStock ? "Sí" : "No"}</h2>
-        <img src={productcard2.image} alt="fotoproducto" />
-      </div>
+        <div className="products" id="Productcard2">
+          <div className="productstext">
+            <h2>Nombre: {productcard2.name}</h2>
+            <h2>Precio: {productcard2.price}</h2>
+            <h2>En stock: {productcard2.inStock ? "Sí" : "No"}</h2>
+          </div>
+          <div className="cardproductimgcontainer">
+            <img src={productcard2.image} alt="fotoproducto" className="cardproductimg" />
+          </div>
+        </div>
+        <div className="products" id="Productcard3">
+          <div className="productstext">
+            <h2>Nombre: {productcard3.name}</h2>
+            <h2>Precio: {productcard3.price}</h2>
+            <h2>En stock: {productcard3.inStock ? "Sí" : "No"}</h2>
+          </div>
+          <div className="cardproductimgcontainer">
+            <img src={productcard3.image} alt="fotoproducto" className="cardproductimg" />
+          </div>
+        </div>
     </div>
   );
 }
