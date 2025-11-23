@@ -1,0 +1,18 @@
+body {
+  background: #e8e8e8;
+  font-family: Arial;
+}
+
+.poke-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.poke-card {
+  border: 1px solid #aaa;
+  background: white;
+  padding: 10px;
+  text-align: center;
+}
+
